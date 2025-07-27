@@ -14,20 +14,21 @@ export default async function handler(req, res) {
   const mockData = {
     staffAttendance: {
       present: 45,
-      absent: 3,
-      total: 48,
-      percentage: 93.8
+      absent: 3
     },
     studentAttendance: {
       present: 892,
-      absent: 23,
-      total: 915,
-      percentage: 97.5
+      absent: 23
     },
     behavior: {
-      incidents: 2,
-      positive: 15,
-      total: 17
+      middleSchool: {
+        positive: 8,
+        negative: 1
+      },
+      elementary: {
+        positive: 7,
+        negative: 1
+      }
     },
     upcomingEvents: [
       {
@@ -55,10 +56,12 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === 'GET') {
+      console.log('Sending mock data:', JSON.stringify(mockData, null, 2));
       res.status(200).json(mockData);
     } else if (req.method === 'POST') {
       // For now, just return the same data
       // In production, this would update the backend
+      console.log('Received POST request, returning mock data');
       res.status(200).json(mockData);
     } else {
       res.status(405).json({ error: 'Method not allowed' });
