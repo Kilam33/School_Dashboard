@@ -1,0 +1,33 @@
+# Backend files (deploy separately)
+backend/
+
+# Development files
+node_modules/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build artifacts
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock 
